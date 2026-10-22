@@ -12,7 +12,7 @@ foreach ($lang in $Langs) { foreach ($v in $Versions) {
     python -I "$root\scripts\build_cv.py" $lang $v $html
     if (Test-Path $pdf) { Remove-Item $pdf }
     $u = 'file:///' + $html.Replace('\', '/')
-    $a = "--headless --disable-gpu --no-pdf-header-footer --user-data-dir=$tmp\prof-$v-$lang --print-to-pdf=$pdf $u"
+    $a = "--headless --disable-gpu --no-pdf-header-footer --virtual-time-budget=8000 --user-data-dir=$tmp\prof-$v-$lang --print-to-pdf=$pdf $u"
     Start-Process -FilePath $edge -ArgumentList $a -Wait -NoNewWindow -RedirectStandardError "$tmp\edge.log" | Out-Null
     Get-Process msedge -ErrorAction SilentlyContinue | Stop-Process -Force
     if (Test-Path $pdf) {

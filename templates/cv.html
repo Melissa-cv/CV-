@@ -3,52 +3,60 @@
 <head>
 <meta charset="utf-8">
 <title>CV {{NOMBRE}}</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
+  /* Dos columnas: barra lateral verde petróleo con toques ámbar + columna principal con tarjetas suaves.
+     Titulares serif (Fraunces), texto Inter, etiquetas y fechas en mono (IBM Plex Mono). */
   @page { size: A4; margin: 0; }
+  :root { --deep: #1d4a4f; --deeper: #153a3e; --amber: #e2b35e; --amber-d: #a9741a; --teal: #2f6f73; --soft: #f3f7f6; --ink: #1b2528; --muted: #5d6b70;
+          --serif: 'Fraunces', Georgia, serif; --sans: 'Inter', 'Segoe UI', Arial, sans-serif; --mono: 'IBM Plex Mono', Consolas, monospace; }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html, body { width: 210mm; height: 297mm; overflow: hidden; }
-  body { font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif; font-size: 8.3pt; line-height: 1.32; color: #26323a; display: flex; }
-  :root { --brand: #1FC1C9; --dark: #0f6f75; --soft: #e8f9fa; }
-  aside { width: 70mm; height: 297mm; background: var(--brand); color: #fff; padding: 11mm 6.5mm 8mm; display: flex; flex-direction: column; }
-  aside a { color: #fff; text-decoration: none; }
-  .qr { margin-top: auto; background: #fff; border-radius: 3mm; padding: 2.4mm; text-align: center; color: var(--dark); }
-  .qr img { width: 30mm; height: 30mm; display: block; margin: 0 auto 1mm; }
-  .qr p { font-size: 7pt; line-height: 1.25; }
-  main { width: 140mm; height: 297mm; padding: 11mm 9mm 8mm 8mm; }
-  .foto { width: 33mm; height: 33mm; border-radius: 50%; border: 1.2mm solid #fff; margin: 0 auto 4mm; background: url('{{FOTO}}') center 20% / cover; }
-  aside h1 { font-size: 15pt; line-height: 1.1; text-align: center; font-weight: 800; }
-  aside .rol { text-align: center; font-size: 8.5pt; margin: 1.5mm 0 4mm; opacity: .95; }
-  aside h2 { font-size: 8.5pt; letter-spacing: .12em; text-transform: uppercase; border-bottom: .3mm solid rgba(255,255,255,.7); padding-bottom: 1mm; margin: 4.5mm 0 2mm; }
-  aside p, aside li { font-size: 7.9pt; }
+  html, body { width: 210mm; height: 297mm; overflow: hidden; background: #fff; }
+  body { font-family: var(--sans); font-size: 8pt; line-height: 1.34; color: var(--ink); display: flex; }
+  aside { width: 68mm; height: 297mm; background: var(--deep); color: #eef5f5; padding: 11mm 6.5mm 8mm; display: flex; flex-direction: column; }
+  main { width: 142mm; height: 297mm; padding: 11mm 10mm 8mm 9mm; }
+  aside a { color: inherit; text-decoration: none; }
+  .foto { flex-shrink: 0; width: 30mm; height: 30mm; border-radius: 50%; border: 1mm solid var(--amber); margin: 0 auto 4mm; background: #fff url('{{FOTO}}') 48% 24% / 230% auto; }
+  aside h1 { font-family: var(--serif); font-size: 17pt; line-height: 1.06; text-align: center; font-weight: 600; }
+  aside .rol { font-family: var(--serif); font-style: italic; text-align: center; font-size: 8.8pt; margin: 1.6mm 0 3mm; color: #cfe3e3; }
+  aside h2 { font-family: var(--mono); font-weight: 500; font-size: 6.9pt; letter-spacing: .16em; text-transform: uppercase; color: var(--amber); border-bottom: .25mm solid rgba(255,255,255,.22); padding-bottom: .9mm; margin: 3.5mm 0 1.7mm; }
   aside ul { list-style: none; }
-  aside li { margin-bottom: 1.2mm; }
-  aside li b { display: block; font-size: 8pt; }
-  aside .ic { display: inline-block; width: 4.5mm; font-weight: 700; }
-  aside .chips span { display: inline-block; background: rgba(255,255,255,.22); border-radius: 2mm; padding: .4mm 1.8mm; margin: 0 .8mm .9mm 0; font-size: 7.4pt; }
+  aside li { font-size: 7.6pt; margin-bottom: 1mm; }
+  aside li b { display: block; font-size: 7.9pt; font-weight: 600; }
+  aside .per { font-family: var(--mono); font-size: 6.8pt; color: #cfe3e3; }
+  aside .ic { display: inline-block; width: 4.6mm; font-family: var(--mono); font-weight: 500; color: var(--amber); }
   aside .contact li { word-break: break-all; }
-  main h2 { color: var(--dark); font-size: 10pt; text-transform: uppercase; letter-spacing: .1em; font-weight: 800; margin: 4mm 0 2mm; display: flex; align-items: center; }
-  main h2::after { content: ''; flex: 1; height: .35mm; background: var(--brand); margin-left: 2.5mm; }
+  aside .chips span { display: inline-block; border: .25mm solid rgba(255,255,255,.4); border-radius: 1mm; padding: .35mm 1.6mm; margin: 0 .6mm .7mm 0; font-family: var(--mono); font-size: 6.5pt; }
+  .qr { margin-top: auto; background: #fff; border-radius: 2mm; padding: 1.8mm; text-align: center; color: var(--deep); border-top: 1mm solid var(--amber); }
+  .qr img { width: 24mm; height: 24mm; display: block; margin: 0 auto 1mm; }
+  .qr p { font-size: 6.8pt; line-height: 1.25; }
+  main h2 { display: flex; align-items: baseline; gap: 2.2mm; font-family: var(--serif); font-weight: 600; color: var(--deep); font-size: 12pt; margin: 4mm 0 2.2mm; }
   main h2:first-child { margin-top: 0; }
-  .perfil { font-size: 8.4pt; text-align: justify; }
-  .card { background: var(--soft); border-left: 1.2mm solid var(--brand); border-radius: 0 2mm 2mm 0; padding: 1.7mm 2.6mm; margin-bottom: 1.9mm; break-inside: avoid; }
-  .card h3 { font-size: 8.6pt; color: #11323a; font-weight: 700; }
-  .card .ctx { font-size: 7.5pt; color: var(--dark); font-weight: 600; }
-  .card p { font-size: 8pt; }
+  main h2 i { font-family: var(--mono); font-style: normal; font-weight: 500; font-size: 7pt; color: var(--amber-d); letter-spacing: .08em; }
+  main h2::after { content: ''; flex: 1; height: .3mm; background: #cfdcdb; }
+  .perfil { font-size: 8.2pt; text-align: justify; }
+  .card { background: var(--soft); border-left: 1mm solid var(--amber); border-radius: 0 1.6mm 1.6mm 0; padding: 1.6mm 2.6mm; margin-bottom: 1.8mm; break-inside: avoid; }
+  .card h3 { font-size: 8.4pt; font-weight: 600; color: var(--deeper); }
+  .card .ctx { font-family: var(--mono); font-size: 6.9pt; color: var(--teal); margin: .1mm 0 .5mm; }
+  .card p { font-size: 7.9pt; }
+  .muted { color: var(--muted); }
   .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0 2mm; }
   .item { margin-bottom: 2mm; }
-  .item .head { display: flex; justify-content: space-between; gap: 2mm; }
-  .item h3 { font-size: 8.6pt; font-weight: 700; }
-  .item .per { font-size: 7.5pt; color: var(--dark); white-space: nowrap; font-weight: 600; }
-  .item .org { font-size: 8pt; color: #4b5a63; }
+  .item .head { display: flex; justify-content: space-between; gap: 2mm; align-items: baseline; }
+  .item h3 { font-size: 8.4pt; font-weight: 600; }
+  .item .per { font-family: var(--mono); font-size: 7pt; color: var(--teal); white-space: nowrap; }
+  .item .org { font-size: 7.9pt; color: var(--muted); }
   .item ul { margin: .5mm 0 0 4mm; }
-  .item li { font-size: 8pt; }
-  .cursos li { margin: 0 0 .9mm 4mm; font-size: 8pt; }
-  .cursos li span { color: #4b5a63; }
+  .item li { font-size: 7.9pt; }
+  .cursos { list-style: none; }
+  .cursos li { margin: 0 0 .9mm 0; padding-left: 3.4mm; position: relative; font-size: 7.9pt; }
+  .cursos li::before { content: ''; position: absolute; left: 0; top: 1.5mm; width: 1.5mm; height: 1.5mm; background: var(--amber); }
+  .cursos li span { color: var(--muted); }
 </style>
 </head>
 <body>
 <aside>
-  {{FOTO_DIV}}
+  <div class="foto"></div>
   <h1>{{NOMBRE}}</h1>
   <div class="rol">{{TITULO}}</div>
   <h2>{{L_CONTACTO}}</h2>
@@ -66,15 +74,15 @@
   {{QR_BLOCK}}
 </aside>
 <main>
-  <h2>{{L_PERFIL}}</h2>
+  <h2><i>01</i>{{L_PERFIL}}</h2>
   <p class="perfil">{{PERFIL}}</p>
-  <h2>{{L_PROYECTOS}}</h2>
+  <h2><i>02</i>{{L_PROYECTOS}}</h2>
   {{PROYECTOS}}
-  <h2>{{L_MATERIAS}}</h2>
+  <h2><i>03</i>{{L_MATERIAS}}</h2>
   <div class="grid2">{{MATERIAS}}</div>
-  <h2>{{L_CURSOS}}</h2>
+  <h2><i>04</i>{{L_CURSOS}}</h2>
   <ul class="cursos">{{CURSOS}}</ul>
-  <h2>{{L_EXPERIENCIA}}</h2>
+  <h2><i>05</i>{{L_EXPERIENCIA}}</h2>
   {{EXPERIENCIA}}
 </main>
 </body>

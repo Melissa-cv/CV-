@@ -22,7 +22,8 @@ Todo lo orquesta el subagente `cv-manager` (`.claude/agents/cv-manager.md`), que
 - **QR:** el PDF corto (1 página) lleva un QR que apunta a la web, que es la versión larga del CV (`output/qr-cv.png`). Debe caber en la misma hoja.
 - **Proyectos:** no añadir programas/herramientas a los proyectos; se dejan exactamente como los especificó Melissa.
 - **Electivas:** las materias tipo Metrología, Normas técnicas, Nanotecnología, Ensayos biológicos y Gestión de equipos son *electivas de profundización* de la UdeA.
-- **Diseño:** moderno y llamativo, sin restricciones ATS (dos columnas, barra lateral de color, iconos, bloques destacados). Color de marca actual: turquesa `#1FC1C9`.
+- **Diseño (dos columnas, decisión final de Melissa):** barra lateral verde petróleo `#1D4A4F` con toques ámbar `#E2B35E` (foto circular con aro ámbar, títulos de sección en mono ámbar, chips solo con borde) y columna principal blanca con títulos numerados en serif (Fraunces), tarjetas suaves `#F3F7F6` con borde ámbar, texto Inter y fechas en mono (IBM Plex Mono). Sobrio, no chillón y no la plantilla común de Canva. Se aplica igual a los PDF y a la web. En el PDF corto el QR va abajo de la barra lateral. Plantillas: `templates/cv.html` (corta) y `templates/cv-largo.html` (larga). Foto con fondo blanco de estudio: `assets/foto-estudio.jpg` (el original se conserva en `assets/foto-original.jpg`).
+- **Corta:** debe incluir los cursos Tecnovigilancia, Neurología y neurorrehabilitación y el Semillero de áreas básicas de la salud.
 - **Versiones:** cada elemento lleva `versiones: corta, larga`. La corta cabe en 1 página.
 - Los PDF originales de referencia están en `originales/` y no se modifican.
 - Se escribe en español; ortografía y tildes revisadas siempre.

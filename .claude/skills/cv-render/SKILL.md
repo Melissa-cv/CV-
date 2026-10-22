@@ -15,4 +15,4 @@ description: Genera los PDF del CV (corto de 1 página y largo, en español e in
 6. Nombres: `output/CV-Melissa-Cadavid-{corta|larga}-{es|en}.pdf`; variantes en `variants/<empresa>/`.
 
 ## Diseño
-Dos columnas con barra lateral turquesa `#1FC1C9`, foto circular (`assets/foto.*`, solo si existe), iconos, tarjetas destacadas para proyectos y electivas, tipografía Montserrat. Orden de la corta: Perfil → Proyectos destacados → Cursos/certificaciones → Experiencia → Formación → Habilidades.
+Dos columnas (ver `CLAUDE.md`): barra lateral verde petróleo con toques ámbar, foto circular (`assets/foto-estudio.jpg`) y QR (solo corta) abajo; columna principal con secciones numeradas y tarjetas suaves. Orden de la corta: Perfil → Proyectos → Electivas → Cursos → Experiencia (Formación y habilidades van en la barra lateral).

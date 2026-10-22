@@ -15,4 +15,4 @@ description: Genera la versión online del CV (docs/index.html para GitHub Pages
 7. Revisa la página en el navegador integrado (escritorio y móvil) antes de dar por terminado.
 
 ## Diseño
-Mismo lenguaje visual que el PDF (turquesa `#1FC1C9`, Montserrat, tarjetas), con modo claro/oscuro. Los proyectos y cursos universitarios van arriba del todo, antes que la experiencia.
+Mismo lenguaje visual que el PDF (dos columnas: barra lateral verde petróleo con toques ámbar, tarjetas suaves, serif + mono), con modo claro/oscuro. Se genera con `python -I scripts/build_web.py`. Los proyectos y cursos universitarios van arriba del todo, antes que la experiencia.
