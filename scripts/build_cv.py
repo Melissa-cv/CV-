@@ -73,8 +73,9 @@ for m in d["Materias y cursos clave"]:
     if not inV(m):
         continue
     if V == "corta":
-        if m.get("que_aprendi"):
-            mat += f'<div class="card"><h3>{e(SUF.sub("", m["titulo"]))}</h3><p>{e(m["que_aprendi"])}.</p></div>'
+        txt = m.get("que_aprendi") or m.get("proyecto_asociado")
+        if txt:
+            mat += f'<div class="card"><h3>{e(SUF.sub("", m["titulo"]))}</h3><p>{e(txt)}.</p></div>'
     else:
         body = f'{e(m["que_aprendi"])}.' if m.get("que_aprendi") else ""
         asoc = f' <span class="muted">{LBL["ASOC"]}: {e(m["proyecto_asociado"])}.</span>' if m.get("proyecto_asociado") else ""
