@@ -1,0 +1,11 @@
+# Repositorio PÚBLICO (GitHub Pages): solo se publica la web y las herramientas.
+# Todo lo que contiene datos personales se queda únicamente en el computador.
+data/
+output/
+assets/
+originales/
+variants/
+RESUMEN.txt
+.claude/settings.local.json
+__pycache__/
+*.pyc

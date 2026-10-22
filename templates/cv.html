@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="{{LANG}}">
+<head>
+<meta charset="utf-8">
+<title>CV {{NOMBRE}}</title>
+<style>
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 210mm; height: 297mm; overflow: hidden; }
+  body { font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif; font-size: 8.3pt; line-height: 1.32; color: #26323a; display: flex; }
+  :root { --brand: #1FC1C9; --dark: #0f6f75; --soft: #e8f9fa; }
+  aside { width: 70mm; height: 297mm; background: var(--brand); color: #fff; padding: 11mm 6.5mm 8mm; display: flex; flex-direction: column; }
+  aside a { color: #fff; text-decoration: none; }
+  .qr { margin-top: auto; background: #fff; border-radius: 3mm; padding: 2.4mm; text-align: center; color: var(--dark); }
+  .qr img { width: 30mm; height: 30mm; display: block; margin: 0 auto 1mm; }
+  .qr p { font-size: 7pt; line-height: 1.25; }
+  main { width: 140mm; height: 297mm; padding: 11mm 9mm 8mm 8mm; }
+  .foto { width: 33mm; height: 33mm; border-radius: 50%; border: 1.2mm solid #fff; margin: 0 auto 4mm; background: url('{{FOTO}}') center 20% / cover; }
+  aside h1 { font-size: 15pt; line-height: 1.1; text-align: center; font-weight: 800; }
+  aside .rol { text-align: center; font-size: 8.5pt; margin: 1.5mm 0 4mm; opacity: .95; }
+  aside h2 { font-size: 8.5pt; letter-spacing: .12em; text-transform: uppercase; border-bottom: .3mm solid rgba(255,255,255,.7); padding-bottom: 1mm; margin: 4.5mm 0 2mm; }
+  aside p, aside li { font-size: 7.9pt; }
+  aside ul { list-style: none; }
+  aside li { margin-bottom: 1.2mm; }
+  aside li b { display: block; font-size: 8pt; }
+  aside .ic { display: inline-block; width: 4.5mm; font-weight: 700; }
+  aside .chips span { display: inline-block; background: rgba(255,255,255,.22); border-radius: 2mm; padding: .4mm 1.8mm; margin: 0 .8mm .9mm 0; font-size: 7.4pt; }
+  aside .contact li { word-break: break-all; }
+  main h2 { color: var(--dark); font-size: 10pt; text-transform: uppercase; letter-spacing: .1em; font-weight: 800; margin: 4mm 0 2mm; display: flex; align-items: center; }
+  main h2::after { content: ''; flex: 1; height: .35mm; background: var(--brand); margin-left: 2.5mm; }
+  main h2:first-child { margin-top: 0; }
+  .perfil { font-size: 8.4pt; text-align: justify; }
+  .card { background: var(--soft); border-left: 1.2mm solid var(--brand); border-radius: 0 2mm 2mm 0; padding: 1.7mm 2.6mm; margin-bottom: 1.9mm; break-inside: avoid; }
+  .card h3 { font-size: 8.6pt; color: #11323a; font-weight: 700; }
+  .card .ctx { font-size: 7.5pt; color: var(--dark); font-weight: 600; }
+  .card p { font-size: 8pt; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0 2mm; }
+  .item { margin-bottom: 2mm; }
+  .item .head { display: flex; justify-content: space-between; gap: 2mm; }
+  .item h3 { font-size: 8.6pt; font-weight: 700; }
+  .item .per { font-size: 7.5pt; color: var(--dark); white-space: nowrap; font-weight: 600; }
+  .item .org { font-size: 8pt; color: #4b5a63; }
+  .item ul { margin: .5mm 0 0 4mm; }
+  .item li { font-size: 8pt; }
+  .cursos li { margin: 0 0 .9mm 4mm; font-size: 8pt; }
+  .cursos li span { color: #4b5a63; }
+</style>
+</head>
+<body>
+<aside>
+  {{FOTO_DIV}}
+  <h1>{{NOMBRE}}</h1>
+  <div class="rol">{{TITULO}}</div>
+  <h2>{{L_CONTACTO}}</h2>
+  <ul class="contact">{{CONTACTO}}</ul>
+  <h2>{{L_FORMACION}}</h2>
+  <ul>{{FORMACION}}</ul>
+  <h2>{{L_SOFTWARE}}</h2>
+  <div class="chips">{{SOFTWARE}}</div>
+  <h2>{{L_TECNICAS}}</h2>
+  <ul>{{TECNICAS}}</ul>
+  <h2>{{L_BLANDAS}}</h2>
+  <div class="chips">{{BLANDAS}}</div>
+  <h2>{{L_IDIOMAS}}</h2>
+  <ul>{{IDIOMAS}}</ul>
+  {{QR_BLOCK}}
+</aside>
+<main>
+  <h2>{{L_PERFIL}}</h2>
+  <p class="perfil">{{PERFIL}}</p>
+  <h2>{{L_PROYECTOS}}</h2>
+  {{PROYECTOS}}
+  <h2>{{L_MATERIAS}}</h2>
+  <div class="grid2">{{MATERIAS}}</div>
+  <h2>{{L_CURSOS}}</h2>
+  <ul class="cursos">{{CURSOS}}</ul>
+  <h2>{{L_EXPERIENCIA}}</h2>
+  {{EXPERIENCIA}}
+</main>
+</body>
+</html>
